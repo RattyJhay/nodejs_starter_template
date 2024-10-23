@@ -1,88 +1,78 @@
-# Node.js TypeScript Starter Template
+# Node.js TypeScript Starter Template Pro
 
-A minimal but powerful starter template for building Node.js applications with TypeScript. This template includes Express.js setup with essential middleware for security and API functionality.
+A production-ready, feature-rich template for building scalable Node.js applications with TypeScript. Built with modern best practices, security, and monitoring in mind.
 
-## Features
+## ✨ Features
 
-- 🚀 **TypeScript** support
-- ⚡️ **Express.js** for fast server setup
-- 🔒 **Helmet** for enhanced security
-- 🌐 **CORS** enabled with configurable origin
-- 🍪 **Cookie Parser** middleware
-- 📝 **dotenv** for environment variable management
-- 🔄 **Hot reload** development server
-- 💪 **Health Check Endpoint** for monitoring
-- 🛡️ **Error Handling** middleware
-- 📊 **Request Parsing** for JSON and URL-encoded bodies
+- **Core**
 
-## Prerequisites
+  - 🚀 TypeScript 5.x
+  - ⚡️ Express.js with modern setup
+  - 🔄 Hot reload development
+  - 📝 Environment management
 
-Before you begin, ensure you have the following installed:
+- **Security & Monitoring**
 
-- Node.js (version 16.x or higher recommended)
-- pnpm, npm, or yarn package manager
-- nodemon (global installation required)
+  - 🔒 Helmet.js security headers
+  - 🌐 Configurable CORS
+  - 💪 Health check endpoint
+  - 🛡️ Production-ready error handling
+
+- **Developer Experience**
+  - 🔥 Hot reload with tsx
+  - 📊 Request parsing (JSON, URL-encoded)
+  - 🍪 Cookie handling
+  - 🎯 TypeScript types included
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Node.js (16.x or higher)
+- pnpm (or npm/yarn)
+- nodemon (global)
 
 ```bash
-# Install nodemon globally using your preferred package manager
-npm install -g nodemon
-# or
-yarn global add nodemon
-# or
 pnpm add -g nodemon
 ```
 
-## Installation
+### Setup
 
-1. Clone the repository:
-
-```bash
-git clone https://github.com/RattyJhay/nodejs_starter_template_pro.git
-cd node_ts_starter_template
-```
-
-2. Install dependencies:
+1. Clone and install:
 
 ```bash
+git clone https://github.com/RattyJhay/nodejs_ts_starter_template_pro.git
+cd nodejs_ts_starter_template_pro
 pnpm install
-# or
-npm install
-# or
-yarn install
 ```
 
-3. Create a `.env` file in the root directory:
+2. Set up environment:
 
 ```bash
 cp .env.example .env
 ```
 
-## Scripts
+3. Start development:
 
-- `pnpm start` - Start the development server with hot reload
-- `pnpm build` - Build the TypeScript code
-- `pnpm test` - Run tests (currently placeholder)
-
-## Project Structure
-
-```
-├── src/
-│   ├── index.ts        # Application entry point
-│   ├── app.ts          # Express application setup
-│   ├── routes/         # API routes
-│   ├── controllers/    # Route controllers
-│   ├── middleware/     # Custom middleware
-│   └── config/         # Configuration files
-├── dist/               # Compiled JavaScript files
-├── .env               # Environment variables
-├── .gitignore
-├── tsconfig.json      # TypeScript configuration
-└── package.json
+```bash
+pnpm start
 ```
 
-## Environment Variables
+## 📁 Project Structure
 
-Create a `.env` file in the root directory with the following variables:
+```
+src/
+├── index.ts        # Server entry
+├── app.ts          # Express setup
+├── routes/         # API routes
+├── controllers/    # Route handlers
+├── middleware/     # Custom middleware
+└── config/         # Configurations
+```
+
+## ⚙️ Configuration
+
+`.env` file setup:
 
 ```env
 PORT=5000
@@ -90,107 +80,78 @@ NODE_ENV=development
 CORS_ORIGIN=http://localhost:5173
 ```
 
-## Health Check Endpoint
+## 🛠️ Scripts
 
-The template includes a health check endpoint at `/health` that returns important system metrics:
+- `pnpm start` - Development with hot reload
+- `pnpm build` - Production build
+- `pnpm test` - Run tests
 
-```bash
-GET /health
-```
+## 🏥 Health Monitoring
 
-Response example:
+Built-in health endpoint at `/health` providing:
 
-```json
-{
-  "status": "success",
-  "uptime": 1234.5678,
-  "timestamp": "2024-01-01T00:00:00.000Z",
-  "memory": {
-    "heapTotal": 123456789,
-    "heapUsed": 987654321,
-    "rss": 123456789,
-    "external": 987654321
-  }
-}
-```
+- System uptime
+- Memory usage
+- Server timestamp
+- Resource metrics
 
-### Health Check Metrics Explained:
+Perfect for:
 
-- `uptime`: Number of seconds the server has been running
-- `timestamp`: Current server time in ISO format
-- `memory`: Object containing memory usage statistics
-  - `heapTotal`: Total size of the allocated heap
-  - `heapUsed`: Actual memory used during execution
-  - `rss`: Resident Set Size, total memory allocated
-  - `external`: Memory used by C++ objects bound to JavaScript objects
-
-This endpoint is useful for:
-
-- Monitoring service health
-- Container orchestration (e.g., Kubernetes liveness probes)
+- Kubernetes probes
 - Load balancer checks
 - Uptime monitoring
 
-## Error Handling
+## 🔒 Security Features
 
-The template includes built-in error handling:
-
-- Global error handler for uncaught exceptions
-- 404 handler for undefined routes
-- Environment-aware error messages (detailed in development, generic in production)
-
-## Security Features
-
-- Helmet.js for secure HTTP headers
-- CORS protection with configurable origin
+- Helmet.js HTTP security headers
+- CORS with configurable origins
 - Environment-based error responses
-- Secure cookie parsing
+- Secure cookie handling
+- Production error sanitization
 
-## Development
+## 🚀 Development
 
-To start the development server:
+Start the dev server:
 
 ```bash
 pnpm start
 ```
 
-The server will restart automatically when file changes are detected.
-
-## Building for Production
-
-To build the project:
+Build for production:
 
 ```bash
 pnpm build
 ```
 
-This will create a `dist` directory with the compiled JavaScript files.
+## 📦 Dependencies
 
-## Dependencies
+**Production:**
 
-### Production
+- `express` - Web framework
+- `helmet` - Security headers
+- `cors` - CORS handling
+- `cookie-parser` - Cookie handling
+- `dotenv` - Environment management
 
-- express: Web framework for Node.js
-- cookie-parser: Parse Cookie header and populate req.cookies
-- cors: Enable Cross-Origin Resource Sharing
-- dotenv: Load environment variables from .env file
-- helmet: Security middleware
+**Development:**
 
-### Development
+- `typescript` - Type support
+- `tsx` - TypeScript execution
+- `ts-node` - TypeScript runtime
+- `@types/*` - Type definitions
 
-- typescript: TypeScript language
-- ts-node: TypeScript execution engine
-- tsx: Enhanced TypeScript execution
-- @types/\*: TypeScript type definitions
+## 🤝 Contributing
 
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
+1. Fork it
+2. Create your feature branch (`git checkout -b feature/amazing`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push to branch (`git push origin feature/amazing`)
 5. Open a Pull Request
 
-## License
+## 📄 License
 
-This project is licensed under the ISC License - see the LICENSE file for details.
+ISC
+
+---
+
+Built with 💙 by Ratty Jhay
